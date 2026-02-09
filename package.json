@@ -1,0 +1,58 @@
+{
+  "name": "swift-notifier-backend",
+  "version": "2.0.0",
+  "description": "Ultra-fast backend for Swift Notifier - handles 80+ concurrent Roblox scanner accounts with 10-second retention",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development nodemon server.js",
+    "prod": "NODE_ENV=production node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"No linter configured\"",
+    "clean": "rm -f findings.db findings.db-shm findings.db-wal"
+  },
+  "keywords": [
+    "roblox",
+    "notifier",
+    "backend",
+    "api",
+    "real-time",
+    "sqlite",
+    "ultra-fast"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "nodemonConfig": {
+    "watch": [
+      "server.js"
+    ],
+    "ext": "js,json",
+    "ignore": [
+      "*.db",
+      "*.db-shm",
+      "*.db-wal",
+      "node_modules/"
+    ],
+    "env": {
+      "NODE_ENV": "development"
+    }
+  }
+}
